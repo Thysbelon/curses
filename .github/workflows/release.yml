@@ -10,7 +10,7 @@ jobs:
     strategy:
       fail-fast: false
 
-    runs-on: windows-latest
+    runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v3
       - name: setup node
@@ -46,5 +46,5 @@ jobs:
           generate_release_notes: true
           fail_on_unmatched_files: true
           files: |
-            src-tauri/target/release/curses.exe
-            src-tauri/target/release/bundle/msi/curses_${{steps.version.outputs.value}}_x64_en-US.msi
+            src-tauri/target/release/curses
+            src-tauri/target/release/bundle/curses.AppImage
